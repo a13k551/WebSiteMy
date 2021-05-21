@@ -1,0 +1,480 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+/*Обнуление*/
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+/* ================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.header__container {
+  display: flex;
+  padding: 0 30px;
+  align-items: center;
+  justify-content: space-around;
+  min-height: 70px;
+}
+.header__Logo {
+  color: #FFF;
+  text-decoration: none;
+  font-size: 40px;
+  font-family: "Roboto", sans-serif;
+}
+.menu__list > li{
+  position: relative;
+  margin: 0 20px 0 20px;
+}
+.menu__icon {
+  display: none;
+}
+.menu__link {
+  color: #fff;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+.menu__sub-link:hover{
+  text-decoration: underline;
+}
+.back{
+  background-color: #8d8d8d85;
+}
+.menu__sub-list {
+  position: absolute;
+  top: 100%;
+  left: -100%;
+  background-color: #FFF;
+  min-width: 200px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow:6px 7px 11px 0px rgba(0,0,0,0.52);
+  -webkit-box-shadow:6px 7px 11px 0px rgba(0,0,0,0.52);
+  -moz-box-shadow:6px 7px 11px 0px rgba(0,0,0,0.52);
+  transform: translate(0px, 10%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3 ease 0s;
+  pointer-events: none;
+}
+.menu__sub-list a{
+  color: rgb(146, 146, 146); 
+  }
+.menu__sub-list > li {
+  margin: 0 0 10px 0;
+}
+.menu__list > li:hover .menu__sub-list{
+  opacity: 0.9;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+.menu__sub-list li:last-child{
+  margin: 0 0 0 0;
+}
+.menu__sub-link {
+  color: #fff;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+}
+
+
+
+
+.wrapper {
+  background: url(img/intro.jpg) center no-repeat;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding-top: 30px;
+}
+.logo {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* красная полоса при наведении */
+.link-hover-solid a {
+  display: inline-block;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+}
+.link-hover-solid a:after {
+  background-color: #ff6000;
+  display: block;
+  content: "";
+  height: 3px;
+  width: 0%;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+.link-hover-solid a:hover:after,
+.link-hover-solid a:focus:after {
+  width: 100%;
+}
+
+.navbar__responsive {
+  display: flex;
+  flex-direction: column;
+}
+
+#menu {
+  display: none;
+}
+#menu:hover {
+  border-bottom: none;
+}
+
+/* intro */
+.intro {
+  width: 100%;
+  height: 100vh;
+  block-size: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.intro__title {
+  font-size: 80px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  padding-top: 50px;
+  transition: 0s ease-in-out;
+}
+.anim {
+  transform: translate(0px, 120%);
+  opacity: 0;
+  transition: all 0.8s ease 0s;
+}
+._active {
+  opacity: 1;
+  transform: translate(0px, 0px);
+}
+.sup__title {
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-family: "Kaushan Script", cursive;
+  animation-name: sup__title;
+  animation-duration: 1s;
+}
+
+.line {
+  border-bottom: 5px solid #fff;
+  width: 10%;
+  margin: 50px auto;
+  animation-name: line;
+  animation-duration: 1s;
+}
+@keyframes sup__title {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes line {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 10%;
+  }
+}
+.btn {
+  display: inline-block;
+  color: #fff;
+  border: 3px solid #fff;
+  padding: 8px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  
+  transition: 0.5s;
+  animation-name: btn;
+  animation-duration: 0.5s;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #333;
+}
+@keyframes btn {
+  0% {
+    padding: 0;
+  }
+
+  100% {
+    padding: 8px 30px;
+  }
+}
+
+.main {
+  height: 700px;
+}
+.main__title {
+  color: black;
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  padding-top: 50px;
+
+  animation-name: sup__title;
+  animation-duration: 1s;
+}
+.main__sup__title {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Kaushan Script", cursive;
+  opacity: 0;
+  animation-name: sup__title;
+  animation-duration: 1s;
+}
+.main__sup__title._active {
+  opacity: 1;
+}
+.main__line {
+  border-bottom: 5px solid #f38181;
+  width: 10%;
+  margin: 50px auto;
+  animation-name: line;
+  animation-duration: 1s;
+}
+.tex_about {
+  font-size: 15px;
+  width: 80%;
+  margin: 0 auto;
+}
+.gal {
+  margin: 50px;
+}
+.gal__img {
+  padding: 0px 20px 0px 0;
+  position: relative;
+
+  max-width: 100%;
+  height: auto;
+
+  transform: scale(0);
+}
+.gal__img._active {
+  transform: scale(1);
+}
+
+.gal__img:hover {
+  opacity: 0.7;
+  transform: translate(-5px, -5px);
+}
+
+.meg {
+  height: 300px;
+  background-color: #95e1d3;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.meg__text {
+  animation-name: meg__text;
+  animation-duration: 0.5s;
+  margin: auto;
+}
+
+.meg__title {
+  font-family: "Roboto", sans-serif;
+}
+.meg__sub__title {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+.cont {
+  padding: 50px;
+}
+.servises {
+  display: flex;
+  flex-direction: column;
+}
+.servises__cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.servises__card {
+  width: 30%;
+}
+.serv__text {
+  font-size: 20px;
+}
+.serv__sub__text {
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+/* designe */
+.designe{
+  background: url(img/123.png) center no-repeat;
+  height: 700px;
+}
+.designe__title{
+  padding-top: 50px;
+}
+.cards{
+  text-align: center;
+
+}
+.imgpl{
+  max-height: 400px;
+}
+.imgtel{
+  max-height: 200px;
+  position: relative;
+  left: -90px;
+
+}
+
+
+
+
+@media (min-width: 767px) {
+  .menu__list {
+    display: flex;
+    align-items: center;
+  }
+  .menu__list > li {
+    padding: 10px 0;
+  }
+}
+@media (max-width: 767px) {
+  /* иконка бургера */
+  .menu__icon{
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 18px;
+    cursor: pointer;    
+  }
+  .menu__icon{
+    z-index: 5;
+  }
+  .menu__icon span,
+  .menu__icon::before,
+  .menu__icon::after{
+
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #fff;
+  }
+  .menu__icon::before,
+  .menu__icon::after{
+    content: "";
+  }
+  .menu__icon::before{
+    top:0;
+  }
+  .menu__icon::after{
+    bottom: 0;
+  } 
+  .menu__icon span{
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+  .menu__icon._active::before{
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+  .menu__icon._active::after{
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+  .menu__icon._active span{
+    transform: scale(0) translate(-50%);
+  }
+  /* верстка меню */
+  .intro__title{
+    font-size: 70px;
+  }
+  .menu__body{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    padding: 100px 30px 30px 30px;
+    transition: left 0.3s ease 0s;
+    left: -100%;
+  }
+  .menu__body._active{
+    left: 0; 
+  }
+  .menu__list > li{
+    margin: 0px 0px 30px 0px;
+  }
+  .menu__link{
+    font-size: 24px;
+    margin:  0 auto;
+    text-align: center;
+  }
+  ._lock{
+    overflow: hidden;
+  }
+
+}
+
+@media (max-width: 850px) {
+  .servises__cards{
+    /* flex-direction: column; */
+    justify-content: center;
+    margin: auto;
+
+  }
+  .servises__card{
+    margin: auto;
+    width: 50%;
+  }
+}
